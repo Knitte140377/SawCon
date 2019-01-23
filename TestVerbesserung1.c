@@ -9,11 +9,11 @@ void fillArray(int *array, int size, int ug, int og)
     }
 }
 
-void printArray(int *array, int size)
+void printArray(int *array, int size,int anz)
 {
     for(int i = 0; i < size; i++)
     {
-        if(i%12==0) {
+        if(i%anz==0) {
             printf("\n");
         }
         printf("%d ", array[i]);
@@ -71,14 +71,14 @@ int main() {
     
     fillArray(array, size, ug, og);
     printf("Array Original: \n");
-    printArray(array, size);
+    printArray(array, size, anz);
     
     int mini = min(array, size);
     int maxi = max(array, size);
     printf("\nArray Umgestellt: \n");
     
     buildNewArray(array, size, mini, maxi);
-    printArray(array, size);
+    printArray(array, size, anz);
     
     return 0;
 }
